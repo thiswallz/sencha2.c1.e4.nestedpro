@@ -6,6 +6,6 @@ Ext.define('Ejemplo4Nested.model.Comuna', {
             {name: 'nombre', type: 'auto'},    
             {name: 'id_ciudad', type: 'auto'}
         ],
-		belongsTo: 'Ejemplo4Nested.model.Ciudad'
-	}
+	belongsTo: 'Ejemplo4Nested.model.Ciudad'
+    }
 });
