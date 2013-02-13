@@ -19,7 +19,7 @@ Ext.define('Ejemplo4Nested.view.ListaRegiones', {
             store: 'mgrCiudadId',
             listeners: {
                 itemtap: function(l,i,t,r,e) {
- 
+                    // and more....
                 }
             }
         });
@@ -30,17 +30,13 @@ Ext.define('Ejemplo4Nested.view.ListaRegiones', {
             store: 'mgrRegionId',            
             listeners: {
                 itemtap: function(l,i,t,r,e) {
-                    var region = r;
-                    region.ciudades().each(function(ciudad) {
-                        console.log(ciudad.get('nombre'))
-                        ciudad.comunas().each(function(comuna) {
-                            console.log("::"+comuna.get('nombre'))
-                        });
-                    });
+                    //clean list
                     var store = ciudades.getStore();
                     var records = store.getRange();
                     store.remove(records);
+                    //set new data
                     ciudades.setData(r.raw.ciudades);
+                    //nested effect
                     me.push(ciudades);
                 }
             }        
